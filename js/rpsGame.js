@@ -18,3 +18,48 @@ function getComputerChoice() {
 
   return computerChoice;
 }
+
+function playRound(playerSelection, computerSelection) {
+  switch(playerSelection) {
+    case 'rock': {
+      switch(computerSelection) {
+        case 'rock': 
+          return "It's a tie.";
+          break;
+        case 'paper': 
+          return "Paper beats rock, the computer wins!";
+          break;
+        case 'scissor':
+          return "Rock beats scissor, the player wins!";
+          break;
+      }
+    }
+    case 'paper': {
+      switch(computerSelection) {
+        case 'rock': 
+          return "Paper beats rock, the player wins!";
+          break;
+        case 'paper': 
+          return "It's a tie.";
+          break;
+        case 'scissor':
+          return "Scissor beats paper, the computer wins!";
+          break;
+      }
+    }
+    case 'scissor': {
+      switch(computerSelection) {
+        case 'rock': 
+          return "Rock beats scissor, the computer wins!";
+          break;
+        case 'paper': 
+          return "Scissor beats paper, the player wins!";
+          break;
+        case 'scissor':
+          return "It's a tie.";
+          break;
+      }
+    }
+    default: return "ERROR, please refresh the page to restart the game."
+  }
+}
