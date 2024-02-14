@@ -63,3 +63,13 @@ function playRound(playerSelection, computerSelection) {
     default: return "ERROR, please refresh the page to restart the game."
   }
 }
+
+let playerChoice = '';
+
+function getPlayerChoice() {
+  playerChoice = prompt("Rock, Paper, or Scissor?").toLowerCase();
+  if ((playerChoice !== 'rock') && (playerChoice !== 'paper') && (playerChoice !== 'scissor')) {
+    getPlayerChoice();
+  }
+  return playerChoice;
+}
