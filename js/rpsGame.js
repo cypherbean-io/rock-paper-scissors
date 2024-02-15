@@ -29,9 +29,11 @@ function playRound(playerSelection, computerSelection) {
           break;
         case 'paper': 
           console.log("Paper beats rock, the computer wins!");
+          computerScore++;
           break;
         case 'scissor':
           console.log("Rock beats scissor, the player wins!");
+          playerScore++;
           break;
       }
       break;
@@ -40,12 +42,14 @@ function playRound(playerSelection, computerSelection) {
       switch(computerSelection) {
         case 'rock': 
           console.log("Paper beats rock, the player wins!");
+          playerScore++;
           break;
         case 'paper': 
           console.log("It's a tie.");
           break;
         case 'scissor':
           console.log("Scissor beats paper, the computer wins!");
+          computerScore++;
           break;
       }
       break;
@@ -54,9 +58,11 @@ function playRound(playerSelection, computerSelection) {
       switch(computerSelection) {
         case 'rock': 
           console.log("Rock beats scissor, the computer wins!");
+          computerScore++;
           break;
         case 'paper': 
           console.log("Scissor beats paper, the player wins!");
+          playerScore++;
           break;
         case 'scissor':
           console.log("It's a tie.");
@@ -75,4 +81,22 @@ function getPlayerChoice() {
     getPlayerChoice();
   }
   return playerChoice;
+}
+
+let playerScore = 0;
+let computerScore = 0;
+
+function playGame() {
+  for (i = 0; i < 5; i++) {
+    playRound(getPlayerChoice(),getComputerChoice());
+  }
+  if (playerScore > computerScore) {
+    console.log("Congrats, you win!");
+  }
+  else if (playerScore < computerScore) {
+    console.log("Sorry, the computer wins.");
+  }
+  else {
+    console.log("It's a tie, play again?")
+  }
 }
