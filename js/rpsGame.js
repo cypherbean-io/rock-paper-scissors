@@ -85,3 +85,17 @@ function getPlayerChoice() {
 
 let playerScore = 0;
 let computerScore = 0;
+
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorButton = document.querySelector('#scissor');
+
+rockButton.addEventListener('click', () => {
+  playRound('rock', getComputerChoice());
+});
+paperButton.addEventListener('click', () => {
+  playRound('paper', getComputerChoice());
+});
+scissorButton.addEventListener('click', () => {
+  playRound('scissor', getComputerChoice())
+});
