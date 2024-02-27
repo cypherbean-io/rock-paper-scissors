@@ -85,18 +85,3 @@ function getPlayerChoice() {
 
 let playerScore = 0;
 let computerScore = 0;
-
-function playGame() {
-  for (i = 0; i < 5; i++) {
-    playRound(getPlayerChoice(),getComputerChoice());
-  }
-  if (playerScore > computerScore) {
-    console.log("Congrats, you win!");
-  }
-  else if (playerScore < computerScore) {
-    console.log("Sorry, the computer wins.");
-  }
-  else {
-    console.log("It's a tie, play again?")
-  }
-}
