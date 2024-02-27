@@ -20,19 +20,19 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  console.log(`You chose ${playerSelection}, the computer chose ${computerSelection}.`);
+  selectionText.textContent = `You chose ${playerSelection}, the computer chose ${computerSelection}.`;
   switch(playerSelection) {
     case 'rock': {
       switch(computerSelection) {
         case 'rock': 
-          console.log("It's a tie.");
+          resultText.textContent = "It's a tie.";
           break;
         case 'paper': 
-          console.log("Paper beats rock, the computer wins!");
+          resultText.textContent = "Paper beats rock, the computer wins!";
           computerScore++;
           break;
         case 'scissor':
-          console.log("Rock beats scissor, the player wins!");
+          resultText.textContent = "Rock beats scissor, the player wins!";
           playerScore++;
           break;
       }
@@ -41,14 +41,14 @@ function playRound(playerSelection, computerSelection) {
     case 'paper': {
       switch(computerSelection) {
         case 'rock': 
-          console.log("Paper beats rock, the player wins!");
+          resultText.textContent = "Paper beats rock, the player wins!";
           playerScore++;
           break;
         case 'paper': 
-          console.log("It's a tie.");
+          resultText.textContent = "It's a tie.";
           break;
         case 'scissor':
-          console.log("Scissor beats paper, the computer wins!");
+          resultText.textContent = "Scissor beats paper, the computer wins!";
           computerScore++;
           break;
       }
@@ -57,15 +57,15 @@ function playRound(playerSelection, computerSelection) {
     case 'scissor': {
       switch(computerSelection) {
         case 'rock': 
-          console.log("Rock beats scissor, the computer wins!");
+          resultText.textContent = "Rock beats scissor, the computer wins!";
           computerScore++;
           break;
         case 'paper': 
-          console.log("Scissor beats paper, the player wins!");
+          resultText.textContent ="Scissor beats paper, the player wins!";
           playerScore++;
           break;
         case 'scissor':
-          console.log("It's a tie.");
+          resultText.textContent = "It's a tie.";
           break;
       }
       break;
@@ -99,3 +99,6 @@ paperButton.addEventListener('click', () => {
 scissorButton.addEventListener('click', () => {
   playRound('scissor', getComputerChoice())
 });
+
+const selectionText = document.querySelector('#selection');
+const resultText = document.querySelector('#result');
