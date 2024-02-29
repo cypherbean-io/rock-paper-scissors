@@ -30,10 +30,12 @@ function playRound(playerSelection, computerSelection) {
         case 'paper': 
           resultText.textContent = "Paper beats rock, the computer wins!";
           computerScore++;
+          computerScoreboard.textContent = `${computerScore}`;
           break;
         case 'scissor':
           resultText.textContent = "Rock beats scissor, the player wins!";
           playerScore++;
+          playerScoreboard.textContent = `${playerScore}`;
           break;
       }
       break;
@@ -43,6 +45,7 @@ function playRound(playerSelection, computerSelection) {
         case 'rock': 
           resultText.textContent = "Paper beats rock, the player wins!";
           playerScore++;
+          playerScoreboard.textContent = `${playerScore}`;
           break;
         case 'paper': 
           resultText.textContent = "It's a tie.";
@@ -50,6 +53,7 @@ function playRound(playerSelection, computerSelection) {
         case 'scissor':
           resultText.textContent = "Scissor beats paper, the computer wins!";
           computerScore++;
+          computerScoreboard.textContent = `${computerScore}`;
           break;
       }
       break;
@@ -59,10 +63,12 @@ function playRound(playerSelection, computerSelection) {
         case 'rock': 
           resultText.textContent = "Rock beats scissor, the computer wins!";
           computerScore++;
+          computerScoreboard.textContent = `${computerScore}`;
           break;
         case 'paper': 
           resultText.textContent ="Scissor beats paper, the player wins!";
           playerScore++;
+          playerScoreboard.textContent = `${playerScore}`;
           break;
         case 'scissor':
           resultText.textContent = "It's a tie.";
@@ -102,3 +108,6 @@ scissorButton.addEventListener('click', () => {
 
 const selectionText = document.querySelector('#selection');
 const resultText = document.querySelector('#result');
+
+const playerScoreboard = document.querySelector('#playerScoreboard');
+const computerScoreboard = document.querySelector('#computerScoreboard');
