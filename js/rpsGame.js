@@ -77,6 +77,14 @@ function playRound(playerSelection, computerSelection) {
       break;
     }
   }
+  if (playerScore === 5) {
+    selectionText.textContent = "";
+    resultText.textContent = "The Player has won! Refresh the page to play again.";
+  }
+  else if (computerScore === 5) {
+    selectionText.textContent = "";
+    resultText.textContent = "The Computer has won! Refresh the page to play again.";
+  }
 }
 
 let playerChoice = '';
